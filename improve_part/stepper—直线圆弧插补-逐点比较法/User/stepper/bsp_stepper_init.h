@@ -23,17 +23,16 @@ typedef struct{
 #define MOTOR_PUL_IRQHandler                 TIM8_UP_TIM13_IRQHandler
 #define MOTOR_PUL_CLK_ENABLE()               __TIM8_CLK_ENABLE()
 #define MOTOR_PUL_GPIO_AF                    GPIO_AF3_TIM8
-
 /*********************X轴电机引脚定义*******************/
 //Motor 方向
-#define X_MOTOR_DIR_PIN                      GPIO_PIN_14
-#define X_MOTOR_DIR_GPIO_PORT                GPIOB
-#define X_MOTOR_DIR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOB_CLK_ENABLE()
+#define X_MOTOR_DIR_PIN                      GPIO_PIN_3
+#define X_MOTOR_DIR_GPIO_PORT                GPIOI
+#define X_MOTOR_DIR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOI_CLK_ENABLE()
 
 //Motor 使能
-#define X_MOTOR_EN_PIN                       GPIO_PIN_15
-#define X_MOTOR_EN_GPIO_PORT                 GPIOB
-#define X_MOTOR_EN_GPIO_CLK_ENABLE()         __HAL_RCC_GPIOB_CLK_ENABLE()
+#define X_MOTOR_EN_PIN                       GPIO_PIN_1
+#define X_MOTOR_EN_GPIO_PORT                 GPIOI
+#define X_MOTOR_EN_GPIO_CLK_ENABLE()         __HAL_RCC_GPIOI_CLK_ENABLE()
 
 //Motor 脉冲
 #define X_MOTOR_PUL_PORT                     GPIOC
@@ -45,14 +44,14 @@ typedef struct{
 
 /*********************Y轴电机引脚定义*******************/
 //Motor 方向
-#define Y_MOTOR_DIR_PIN                      GPIO_PIN_10
-#define Y_MOTOR_DIR_GPIO_PORT                GPIOG          
-#define Y_MOTOR_DIR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOG_CLK_ENABLE()
+#define Y_MOTOR_DIR_PIN                      GPIO_PIN_4
+#define Y_MOTOR_DIR_GPIO_PORT                GPIOE          
+#define Y_MOTOR_DIR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOE_CLK_ENABLE()
 
 //Motor 使能
-#define Y_MOTOR_EN_PIN                       GPIO_PIN_11
-#define Y_MOTOR_EN_GPIO_PORT                 GPIOG                       
-#define Y_MOTOR_EN_GPIO_CLK_ENABLE()      	 __HAL_RCC_GPIOG_CLK_ENABLE()
+#define Y_MOTOR_EN_PIN                       GPIO_PIN_6
+#define Y_MOTOR_EN_GPIO_PORT                 GPIOD                       
+#define Y_MOTOR_EN_GPIO_CLK_ENABLE()      	 __HAL_RCC_GPIOD_CLK_ENABLE()
 
 //Motor 脉冲
 #define Y_MOTOR_PUL_PORT       			         GPIOC

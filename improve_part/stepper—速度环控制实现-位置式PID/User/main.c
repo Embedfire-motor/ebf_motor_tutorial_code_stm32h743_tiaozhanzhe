@@ -31,10 +31,6 @@
 extern _pid pid;
 extern int pid_status;
 
-
-/* 由于低速时步进电机容易产生共振，速度环对步进电机速度的频繁调整加剧了这种共振
-   在步进电机转速到达150转附近时速度环受共振影响而失效，会产生电机主轴剧烈抖动的
-	 现象，这一问题待进一步调试解决 */
 	 
 /**
   * @brief  主函数
@@ -43,7 +39,6 @@ extern int pid_status;
   */
 int main(void) 
 {
-  int i = 0;
 	/* 初始化系统时钟为480MHz */
 	SystemClock_Config();
 	/*初始化USART 配置模式为 115200 8-N-1，中断接收*/
