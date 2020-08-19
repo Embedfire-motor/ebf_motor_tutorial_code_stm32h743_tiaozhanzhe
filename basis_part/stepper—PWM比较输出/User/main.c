@@ -22,7 +22,7 @@
 #include "./stepper/bsp_stepper_init.h"
 #include "./key/bsp_key.h" 
 
-int i=0,j=0;
+int i=1,j=1;
 int dir_val=0;
 int en_val=0;
 /**

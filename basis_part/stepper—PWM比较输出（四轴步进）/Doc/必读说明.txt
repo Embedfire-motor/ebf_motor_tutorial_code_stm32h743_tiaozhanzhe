@@ -25,25 +25,25 @@
 	PUL+<--->3V3
 	PUL-<--->PC6
 	DIR+<--->3V3
-	DIR-<--->PB14
+	DIR-<--->PI3
 	ENA+<--->3V3
-	ENA-<--->PB15
+	ENA-<--->PI1
 	
 步进电机驱动器接口2:
 	PUL+<--->3V3
 	PUL-<--->PC7
 	DIR+<--->3V3
-	DIR-<--->PG10
+	DIR-<--->PE4
 	ENA+<--->3V3
-	ENA-<--->PG11
+	ENA-<--->PD6
 	
 步进电机驱动器接口3:
 	PUL+<--->3V3
 	PUL-<--->PC8
 	DIR+<--->3V3
-	DIR-<--->PC11
+	DIR-<--->PF9
 	ENA+<--->3V3
-	ENA-<--->PD2
+	ENA-<--->PF8
 	
 步进电机驱动器接口4:
 	PUL+<--->3V3

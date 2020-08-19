@@ -28,14 +28,14 @@ typedef struct{
 
 //通道1
 //Motor 方向
-#define MOTOR_DIR1_PIN                  	GPIO_PIN_14   
-#define MOTOR_DIR1_GPIO_PORT            	GPIOB
-#define MOTOR_DIR1_GPIO_CLK_ENABLE()   	  __HAL_RCC_GPIOB_CLK_ENABLE()
+#define MOTOR_DIR1_PIN                  	GPIO_PIN_3   
+#define MOTOR_DIR1_GPIO_PORT            	GPIOI
+#define MOTOR_DIR1_GPIO_CLK_ENABLE()   	  __HAL_RCC_GPIOI_CLK_ENABLE()
 
 //Motor 使能
-#define MOTOR_EN1_PIN                  	  GPIO_PIN_15
-#define MOTOR_EN1_GPIO_PORT            	  GPIOB
-#define MOTOR_EN1_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOB_CLK_ENABLE()
+#define MOTOR_EN1_PIN                  	  GPIO_PIN_1
+#define MOTOR_EN1_GPIO_PORT            	  GPIOI
+#define MOTOR_EN1_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOI_CLK_ENABLE()
 
 //Motor 脉冲
 #define MOTOR_PUL1_PORT       			      GPIOC
@@ -48,14 +48,14 @@ typedef struct{
 
 //通道2
 //Motor 方向
-#define MOTOR_DIR2_PIN                  	GPIO_PIN_10
-#define MOTOR_DIR2_GPIO_PORT            	GPIOG          
-#define MOTOR_DIR2_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOG_CLK_ENABLE()
+#define MOTOR_DIR2_PIN                  	GPIO_PIN_4
+#define MOTOR_DIR2_GPIO_PORT            	GPIOE          
+#define MOTOR_DIR2_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOE_CLK_ENABLE()
 
 //Motor 使能
-#define MOTOR_EN2_PIN                     GPIO_PIN_11
-#define MOTOR_EN2_GPIO_PORT               GPIOG                       
-#define MOTOR_EN2_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOG_CLK_ENABLE()
+#define MOTOR_EN2_PIN                     GPIO_PIN_6
+#define MOTOR_EN2_GPIO_PORT               GPIOD                       
+#define MOTOR_EN2_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOD_CLK_ENABLE()
 
 //Motor 脉冲
 #define MOTOR_PUL2_PORT       			      GPIOC
@@ -68,14 +68,14 @@ typedef struct{
 
 //通道3
 //Motor 方向
-#define MOTOR_DIR3_PIN                  	GPIO_PIN_11
-#define MOTOR_DIR3_GPIO_PORT            	GPIOC          
-#define MOTOR_DIR3_GPIO_CLK_ENABLE()   	  __HAL_RCC_GPIOC_CLK_ENABLE()
+#define MOTOR_DIR3_PIN                  	GPIO_PIN_9
+#define MOTOR_DIR3_GPIO_PORT            	GPIOF          
+#define MOTOR_DIR3_GPIO_CLK_ENABLE()   	  __HAL_RCC_GPIOF_CLK_ENABLE()
 
 //Motor 使能
-#define MOTOR_EN3_PIN                  	  GPIO_PIN_2
-#define MOTOR_EN3_GPIO_PORT            	  GPIOD                 
-#define MOTOR_EN3_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOD_CLK_ENABLE()
+#define MOTOR_EN3_PIN                  	  GPIO_PIN_8
+#define MOTOR_EN3_GPIO_PORT            	  GPIOF                 
+#define MOTOR_EN3_GPIO_CLK_ENABLE()    	  __HAL_RCC_GPIOF_CLK_ENABLE()
 
 //Motor 脉冲
 #define MOTOR_PUL3_PORT       			      GPIOC
