@@ -42,16 +42,16 @@ __IO float number_of_rotations = 0.0f;
   * @param  无
   * @retval 无
   */
-int main(void) 
+int main(void)
 {
   int i = 0;
-	/* 初始化系统时钟为480MHz */
+  
+	/* 初始化系统时钟为180MHz */
 	SystemClock_Config();
 	/*初始化USART 配置模式为 115200 8-N-1，中断接收*/
 	DEBUG_USART_Config();
-	LED_GPIO_Config();
 	printf("欢迎使用野火 电机开发板 步进电机 编码器测速 例程\r\n");
-	printf("按下按键1启动/停止电机、按键2改变方向\r\n");	
+	printf("按下按键1启动电机、按键2停止、按键3改变方向\r\n");	
   /* 初始化时间戳 */
   HAL_InitTick(5);
 	/*按键初始化*/
@@ -61,10 +61,10 @@ int main(void)
 	/*步进电机初始化*/
 	stepper_Init();
   /* 上电默认停止电机，按键1启动 */
-  MOTOR_EN(OFF);
+  MOTOR_EN(LOW);
   /* 编码器接口初始化 */
 	Encoder_Init();
-	
+  
 	while(1)
 	{
     /* 扫描KEY1，启动电机 */
@@ -72,7 +72,7 @@ int main(void)
     {
       MOTOR_EN_TOGGLE;
     }
-    /* 扫描KEY2，改变方向 */
+    /* 扫描KEY3，改变方向 */
     if(Key_Scan(KEY2_GPIO_PORT,KEY2_PIN) == KEY_ON)
     {
       static int j = 0;
@@ -107,7 +107,7 @@ int main(void)
       printf("累计圈数：%.2f 圈\r\n", number_of_rotations);
       i = 0;
     }
-    HAL_Delay(20);
+    delay_ms(20);
     i++;
 	}
 } 	

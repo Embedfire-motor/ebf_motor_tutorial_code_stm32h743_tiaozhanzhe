@@ -100,11 +100,9 @@ void TIM_PWMOUTPUT_Config(void)
 	/* 累计 TIM_Period个后产生一个更新或者中断*/		
 	//当定时器从0计数到10000，即为10000次，为一个定时周期
 	TIM_StepperHandle.Init.Period = TIM_PERIOD; 
-	//定时器时钟源TIMxCLK = 2 * PCLK1  
-	//				PCLK1 = HCLK / 4 
-	//				=> TIMxCLK=HCLK/2=SystemCoreClock/2=240MHz
-	// 设定定时器频率为=TIMxCLK/(TIM_Prescaler+1)=2MHz
-	TIM_StepperHandle.Init.Prescaler = 120-1;                
+	// 通用控制定时器时钟源TIMxCLK = HCLK/2=90MHz 
+	// 设定定时器频率为=TIMxCLK/(TIM_Prescaler+1)=1MHz
+	TIM_StepperHandle.Init.Prescaler = 90-1;                
 
 	/*计数方式*/
 	TIM_StepperHandle.Init.CounterMode = TIM_COUNTERMODE_UP;            

@@ -1,7 +1,9 @@
 #ifndef __BSP_STEP_MOTOR_INIT_H
 #define	__BSP_STEP_MOTOR_INIT_H
 
-#include "stm32h7xx_hal.h"
+
+#include "stm32f7xx_hal.h"
+
 
 /*宏定义*/
 /*******************************************************/
@@ -129,16 +131,13 @@
 #define CCW LOW                 //逆时针
 
 
-
 //控制使能引脚
 /* 带参宏，可以像内联函数一样使用 */
-#define MOTOR_EN(x)         HAL_GPIO_WritePin(MOTOR_EN_GPIO_PORT,MOTOR_EN_PIN,x)
-#define MOTOR_PLU(x)        HAL_GPIO_WritePin(MOTOR_PUL_GPIO_PORT,MOTOR_PUL_PIN,x)
-#define MOTOR_DIR(x)        HAL_GPIO_WritePin(MOTOR_DIR_GPIO_PORT,MOTOR_DIR_PIN,x)
+#define MOTOR_EN(x)					HAL_GPIO_WritePin(MOTOR_EN_GPIO_PORT,MOTOR_EN_PIN,x)
+#define MOTOR_PUL(x)				HAL_GPIO_WritePin(MOTOR_PUL_GPIO_PORT,MOTOR_PUL_PIN,x)
+#define MOTOR_DIR(x)				HAL_GPIO_WritePin(MOTOR_DIR_GPIO_PORT,MOTOR_DIR_PIN,x)
 
 #define MOTOR_EN_TOGGLE     HAL_GPIO_TogglePin(MOTOR_EN_GPIO_PORT,MOTOR_EN_PIN)
-
-
 
 extern void stepper_Init(void);
 
