@@ -11,7 +11,7 @@
 typedef struct
 {
   int32_t timeout;            // 定时器更新计数
-  float speed;                // 电机速度 rps（转/秒）
+  float speed;                // 电机速度 rps（转/分钟）
   int32_t enable_flag;        // 电机使能标志
   int32_t speed_group[SPEED_FILTER_NUM];
 }motor_rotate_t;
@@ -86,7 +86,7 @@ extern TIM_HandleTypeDef htimx_hall;
 					=> TIMxCLK=HCLK/2=SystemCoreClock/2=240MHz
 	 设定定时器频率为 = TIMxCLK / (PWM_PRESCALER_COUNT + 1) / PWM_PERIOD_COUNT = 10Hz
    周期 T = 100ms */
-#define HALL_PRESCALER_COUNT     (2000)
+#define HALL_PRESCALER_COUNT     (2400)
 
 /* TIM5 通道 1 引脚 */
 #define HALL_INPUTU_PIN           		    GPIO_PIN_6
@@ -108,6 +108,7 @@ extern TIM_HandleTypeDef htimx_hall;
 
 #define HALL_TIM_IRQn                    TIM3_IRQn
 #define HALL_TIM_IRQHandler              TIM3_IRQHandler
+
 
 extern TIM_HandleTypeDef TIM_TimeBaseStructure;
 

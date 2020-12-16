@@ -18,9 +18,9 @@ void PID_param_init()
   pid.err_last = 0.0;
   pid.err_next = 0.0;
   
-  pid.Kp = 0.30;
-  pid.Ki = 0.08;
-  pid.Kd = 0.01;
+  pid.Kp = 0.12;
+  pid.Ki = 0.2;
+  pid.Kd = 0.0;
   
 #if defined(PID_ASSISTANT_EN)
   float pid_temp[3] = {pid.Kp, pid.Ki, pid.Kd};
@@ -36,16 +36,6 @@ void PID_param_init()
   */
 void set_pid_target(float temp_val)
 {
-  if (temp_val < 0)
-  {
-    temp_val = -temp_val;
-    set_bldcm_direction(MOTOR_REV);
-  }
-  else
-  {
-    set_bldcm_direction(MOTOR_FWD);
-  }
-    
   pid.target_val = temp_val;    // 设置当前的目标值
 }
 
