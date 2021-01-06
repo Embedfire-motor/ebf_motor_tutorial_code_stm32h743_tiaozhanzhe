@@ -19,7 +19,6 @@
 #include "stm32h7xx.h"
 #include "main.h"
 #include "./led/bsp_led.h"
-#include "./delay/core_delay.h" 
 #include "./usart/bsp_debug_usart.h"
 #include "./stepper/bsp_stepper_init.h"
 #include "./key/bsp_key.h" 
@@ -45,18 +44,16 @@ __IO float number_of_rotations = 0.0f;
 int main(void)
 {
   int i = 0;
-  
-	/* 初始化系统时钟为180MHz */
+  HAL_Init();
+	/* 初始化系统时钟为480MHz */
 	SystemClock_Config();
 	/*初始化USART 配置模式为 115200 8-N-1，中断接收*/
 	DEBUG_USART_Config();
 	printf("欢迎使用野火 电机开发板 步进电机 编码器测速 例程\r\n");
 	printf("按下按键1启动电机、按键2停止、按键3改变方向\r\n");	
-  /* 初始化时间戳 */
-  HAL_InitTick(5);
 	/*按键初始化*/
-	Key_GPIO_Config();	
-	/*led初始化*/
+	Key_GPIO_Config	
+	/*led初始化*/();
 	LED_GPIO_Config();
 	/*步进电机初始化*/
 	stepper_Init();
@@ -72,7 +69,7 @@ int main(void)
     {
       MOTOR_EN_TOGGLE;
     }
-    /* 扫描KEY3，改变方向 */
+    /* 扫描KEY2，改变方向 */
     if(Key_Scan(KEY2_GPIO_PORT,KEY2_PIN) == KEY_ON)
     {
       static int j = 0;
@@ -107,7 +104,7 @@ int main(void)
       printf("累计圈数：%.2f 圈\r\n", number_of_rotations);
       i = 0;
     }
-    delay_ms(20);
+    HAL_Delay(20);
     i++;
 	}
 } 	

@@ -2,7 +2,7 @@
 #define	__BSP_STEP_MOTOR_INIT_H
 
 
-#include "stm32f7xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 
 /*∫Í∂®“Â*/
